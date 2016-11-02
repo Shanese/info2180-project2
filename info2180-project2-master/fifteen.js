@@ -10,7 +10,7 @@ window.onload =function(){
 	var tiles = document.getElementById('puzzlearea').getElementByTagName('div');
 	tiles1=tiles;
 	var botton = document.getElementById('shufflebutton');
-	botton.onclick=shuffle();
+	botton.onclick=shuffle;
 
 	for(var i=0; i<tiles.length;i++){
 		tiles[i].className = 'puzzlepiece';
@@ -43,16 +43,16 @@ function stopMove(){
 }
 
 function movableCheck(tile){
-	if((parseInt(tile.style.left)+parseInt(tile.offsetWidth)) === parseInt(getX()) && elmt.style.top===getY()){
+	if((parseInt(tile.style.left)+parseInt(tile.offsetWidth)) === parseInt(getX()) && tile.style.top===getY()){
 		direct="right";
 		return "right";
-	}else if(parseInt(tile.style.left) === (parseInt(getX())+parseInt(tile.offsetWidth)) && elmt.style.top===getY()){
+	}else if(parseInt(tile.style.left) === (parseInt(getX())+parseInt(tile.offsetWidth)) && tile.style.top===getY()){
 		direct= "left";
 		return "left";
-	}else if((parseInt(tile.style.top)+parseInt(tile.offsetHeight)) === parseInt(getY()) && elmt.style.left===getX()){
+	}else if((parseInt(tile.style.top)+parseInt(tile.offsetHeight)) === parseInt(getY()) && tile.style.left===getX()){
 		direct= "down";
 		return "down";
-	}else if(parseInt(tile.style.top) === (parseInt(getY())+parseInt(tile.offsetHeight)) && elmt.style.left===getX()){
+	}else if(parseInt(tile.style.top) === (parseInt(getY())+parseInt(tile.offsetHeight)) && tile.style.left===getX()){
 		direct= "up";
 		return "up";
 	}else{
